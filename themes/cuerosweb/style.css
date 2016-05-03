@@ -1,0 +1,20 @@
+/*
+Theme Name: Wallpay Tema Wordpresss
+Theme URI: https://
+Author: IngenioArt 
+Author URI: https://
+Description:  Una web woocommerce hecha en wordpress
+Version: 1.2
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: 
+Text Domain: sbg
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+/*Combinacion todos los estilos de las librerias*/
+@import url('css/compact-lib.min.css');
+/* Estilo principal minificado */
+@import url('css/master.css');

@@ -22,6 +22,10 @@ function load_custom_scripts()
 	//cargar bootstrap v4
 	wp_enqueue_script('bootstrap', THEMEROOT . '/js/bootstrap.min.js', array('jquery'), '4.0.0', true);
 
+	//rev slider
+	wp_enqueue_script('revset-slider', THEMEROOT . '/js/jquery.themepunch.plugins.min.js', array('jquery'), '1.0', true);
+	wp_enqueue_script('revvoslider', THEMEROOT . '/js/jquery.themepunch.revolution.min.js', array('jquery'), '4.3.6', true);
+
 	//script
 	wp_enqueue_script('custom_script', THEMEROOT . '/js/script.js', array('jquery'), false, true);
 

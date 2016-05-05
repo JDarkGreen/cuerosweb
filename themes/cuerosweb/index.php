@@ -32,6 +32,98 @@
 	</div><!-- /.container -->
 </section><!-- /.sectionCommon__info-banner -->
 
+
+<!-- Seccion contenido principal -->
+<main class="pageInicio__main-content">
+	<div class="container">
+		<div class="row">
+			<!-- Seccion de Productos destacados -->
+			<div class="col-xs-8">
+				<section class="pageInicio__products">
+					<!-- Titulo -->
+					<h2 class="pageCommon__section-title text-uppercase">
+						<strong><?php _e('productos destacados' , LANG ); ?></strong>
+					</h2> <!-- /.pageCommon__section-title  text-uppercase -->
+					
+					<!-- Contenedor -->
+					<section class="pageInicio__products__content row">
+						<?php  
+							$args = array(
+								'post_status'    => 'publish',
+								'post_type'      => 'product',
+								'posts_per_page' => 9,
+								'meta_key'       => '_featured',  
+								'meta_value'     => 'yes', 
+							);
+							$featured_products = get_posts( $args );
+
+							foreach( $featured_products as $f_product ) :
+						?>
+							<div class="col-xs-4">
+								<article class="text-xs-center">
+									<!-- Enlace al producto -->
+									<a href="<?= $f_product->guid ?>">
+									<!-- Imagen -->
+										<figure>
+										<?php if( has_post_thumbnail( $f_product->ID )) : ?>
+											<?= get_the_post_thumbnail( $f_product->ID , 'full' , array('class'=>'img-fluid') ); ?>
+										<?php endif; ?>
+										</figure> <!-- /.figure -->
+									</a>
+									<!-- Nombre corto -->
+									<h2>
+										<?php 
+											$short_name = get_post_meta( $f_product->ID , 'mb_short_name_product_text', true); 
+
+											if( empty($short_name)){
+												$short_name = wp_trim_words( $f_product->post_title , 3 , '' );
+											}
+
+											echo ucfirst( $short_name );
+										?>
+									</h2>
+									<!-- Codigo de Producto -->
+									<p class="product-code">
+										<strong><?= get_post_meta( $f_product->ID , 'mb_code_product_text', true); ?>
+										</strong>
+									</p>
+									<!-- Precio regular del producto -->
+									<p class="product-price">
+										<?= "S/. " . get_post_meta( $f_product->ID , '_regular_price', true); ?>
+									</p>
+
+									<!-- Saltos de Línea --> <br/>
+
+									<!-- Botón Comprar -->
+									<a href="#" class="btn__buy text-uppercase"><?php _e( 'comprar', LANG ); ?></a>
+
+								</article>
+							</div> <!-- ./col-xs-3 -->
+
+						<?php endforeach; ?>
+					</section><!-- /.pageInicio__products__content -->
+					
+				</section><!-- /.pageInicio__products -->
+			</div> <!-- /.col-xs-8 -->
+			<!-- Aside de categorias -->
+			<div class="col-xs-4">
+				<aside class="mainSidebar">
+					<!-- Categorias -->
+					<section class="mainSidebar__section-categories">
+						<!-- Titulo -->
+						<h2 class="pageCommon__section-title text-uppercase">
+							<strong><?php _e('categorias' , LANG ); ?></strong>
+						</h2> <!-- /.pageCommon__section-title  text-uppercase -->
+
+						<!-- Contenedor -->
+						
+					</section> <!-- /.mainSidebar__section-categories -->
+				</aside> <!-- /.mainSidebar -->
+			</div><!-- /.col-xs-4 -->
+		</div><!-- /.row -->
+	</div><!-- /.container -->
+</main><!-- /.pageInicio__main-content -->
+
 <!-- Seccion Miscelaenea -->
 <section class="sectionCommon__miscelaneo">
 	<div class="container">

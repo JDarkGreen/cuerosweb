@@ -11,15 +11,17 @@
 /**-------------------------- VARIABLES ---------------------------------------------**/
 /***************************************************************************************/
 
-$gray_color_text : #454545
-$gray_color_claro: #EDEEF0
-$gray_color_blog : #777579
+$gray_color_text  : #454545
+$gray_color_claro : #EDEEF0
+$gray_color_blog  : #777579
+$gray_color_border: #9C9A9F
 
-$brown_color     : #200D06
+$brown_color      : #200D06
 
-$green_color     : #009B75 
+$green_color      : #009B75 
 
-$creme_color     : #FFD9B9
+$creme_color      : #FFD9B9
+$creme_color_dark : #F0BC9E
 
 /***************************************************************************************/
 /**-------------------------- RESET --------------------------------------------------**/
@@ -190,8 +192,44 @@ figure
 //Contenido
 .pageInicio__slider__content
 	font-size  : 2em //32px
-	
 
+//-------- SECCION PRINCIPAL PRODUCTOS Y CATEGORIAS ------- //
+.pageInicio__main-content
+	font-family: 'Montserrat', sans-serif
+	margin     : 44px auto 22px
+
+//Sección Productos
+.pageInicio__products
+	//contenedor de articulos
+	.pageInicio__products__content
+		//articulo
+		article
+			border : 1px solid $gray_color_border
+			margin : 0 auto 28px 
+			padding: 12px 0 30px
+			//imagen
+			figure 
+				max-width: 160px
+			h2,p 
+				margin: 0 auto 
+			//titulo corto
+			h2
+				font-size  : 20px
+				font-weight: 600
+		//boton comprar - a 
+		.btn__buy
+			+border-radius( 8px )
+			+box-shadow( inset -1px -1px 4px $creme_color_dark )
+			+transition( all 500ms ease )
+			-webkit-backface-visibility: hidden
+			background                 : $creme_color
+			color                      : $brown_color
+			display                    : inline-block
+			padding                    : 10px 45px  
+			text-decoration            : none
+			//hover
+			&:hover
+				+scale( 1.1 )
 
 /***************************************************************************************/
 /**-------------------------------- PAGINA EMPRESA  ----------------------------------**/

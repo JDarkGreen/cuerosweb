@@ -12,9 +12,11 @@ var j = jQuery.noConflict();
         j.fn.css =  j.fn.cssOriginal;
 
 		j("#carousel-home").revolution({
-			fullWidth  : "off",
-			startheight: 490,                            
-			startwidth : 890,
+			delay         : 4000, 
+			fullWidth     : "on",
+			navigationType: 'none',
+			onHoverStop   : "off",
+			startheight   : 490,
 		}); 
 
 

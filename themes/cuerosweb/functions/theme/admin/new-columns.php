@@ -13,6 +13,7 @@ function add_thumbnail_columns( $columns ) {
 		'comments'       => '<span class="vers"><div title="Comments" class="comment-grey-bubble"></div></span>',
 		'date'           => 'Date'
     );
+
     return $columns;
 }
 
@@ -33,5 +34,15 @@ if ( function_exists( 'add_theme_support' ) ) {
     add_action( 'manage_pages_custom_column' , 'add_thumbnail_columns_data', 10, 2 );
 }
 
+//PARA WOOCOMMERCE
+function product_order($columns){
+   //remove column
+   unset( $columns['featured_thumb'] );
+   unset( $columns['tags'] );
+   unset( $columns['categories'] );
+   unset( $columns['author'] );
+   return $columns;
+}
+add_filter( 'manage_edit-product_columns', 'product_order', 15 );
 
 ?>

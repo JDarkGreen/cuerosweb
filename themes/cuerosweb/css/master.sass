@@ -13,6 +13,13 @@
 
 $gray_color_text : #454545
 $gray_color_claro: #EDEEF0
+$gray_color_blog : #777579
+
+$brown_color     : #200D06
+
+$green_color     : #009B75 
+
+$creme_color     : #FFD9B9
 
 /***************************************************************************************/
 /**-------------------------- RESET --------------------------------------------------**/
@@ -29,6 +36,14 @@ figure
 /***************************************************************************************/
 /**-------------------------- SECCIONES EN COMUN -------------------------------------**/
 /***************************************************************************************/
+
+//No Borde
+.not-border
+	border: none !important
+
+//Full Width
+.full-width
+	width: 100%
 
 //Posicion relativa
 /*°|| =================> POSICION RELATIVA */
@@ -64,10 +79,51 @@ figure
 	right          : 0
 	top            : 0
 
+/*°|| ================>> BANNER INFORMACION <<==========================*/
+.sectionCommon__info-banner
+	background-color: $green_color
+	padding         : 15px 0 
+/* Título */
+.sectionCommon__info-banner__title
+	color      : white 
+	font-size  : 1.5625em //25px
+	line-height: 1em
+	margin     : 0 auto 
+	//span
+	span 
+		color         : $creme_color
+		font-size     : 1.2em //30px 
+		text-transform: lowercase
 
-/*----------------------------------------------------------------------*/
-//°|| ============>> SECCION ARTICULOS - PORTADA =================== ||°*/
-/*----------------------------------------------------------------------*/
+//°|| ============>> SECCION MISCELANEO =================== ||°*/
+
+//Section 
+.sectionCommon__miscelaneo 
+	background: $creme_color
+	padding   : 38px 0 
+//Artículo
+.sectionCommon__miscelaneo__article
+	margin: 0 auto 20px
+	//link
+	a 
+		//text-decoration: none
+	//imagen
+	figure 
+		display: inline-block
+		margin : 0 20px 0 0 
+		width  : 180px
+	//titulo
+	h3 
+		color      : $brown_color
+		font-size  : 24px
+		font-weight: 600
+	//parrafo
+	p 
+		color    : $gray_color_blog
+		font-size: 16px
+		margin   : 0 auto 
+
+
 
 
 /***************************************************************************************/
@@ -122,9 +178,19 @@ figure
 /***************************************************************************************/
 
 //°|| ===========>> SLIDER
+.pageInicio__slider
+	//item de slider
+	.item-slider
+		color: $brown_color
 
-//°|| ============>> SECCION SERVICIOS
-.pageInicio__section-service
+//Títulos
+.pageInicio__slider__title
+	font-size  : 4.0625em //65px
+	font-weight: 700
+//Contenido
+.pageInicio__slider__content
+	font-size  : 2em //32px
+	
 
 
 /***************************************************************************************/
@@ -136,3 +202,59 @@ figure
 /***************************************************************************************/
 /**-------------------------- FOOTER  -----------------------------------------------**/
 /***************************************************************************************/
+
+//seccion
+.mainFooter
+	background     : url('../images/footer/bg-footer.jpg') no-repeat
+	background-size: 100% 100%
+	min-height     : 62px
+	padding        : 15px 0  
+
+//contenedor flexible
+.mainFooter__content
+	color: white
+
+//articulos del footer 
+.mainFooter__article 
+	border-right: 2px solid rgba(255,255,255,0.7)
+	display     : flex
+	flex-wrap   : wrap
+	white-space : nowrap
+	align-items : center
+
+	//Lista: ul contacto
+	.mainFooter__contact-list
+		li
+			margin: 0 auto 5px 
+			i 
+				font-size : 20px
+				margin    : 0 10px 0 0
+				text-align: center  
+				width     : 20px
+
+	//Lista redes sociales
+	.mainFooter__social-list
+		margin: 0 auto
+		li 
+			display: inline-block
+			padding: 0 8px 
+			a 
+				color: white 
+				i 
+					font-size: 25px
+
+//articulos particulares del footer
+.mainFooter__article__logo,.mainFooter__article__social
+	justify-content: center 
+	padding        : 0 4%
+	width          : 25%
+.mainFooter__article__info
+	padding: 0 9%
+	width  : 50%
+
+//subtitulos
+.mainFooter__subtitle
+	font-size    : 20px
+	font-weight  : 700
+	margin-bottom: 16px 
+

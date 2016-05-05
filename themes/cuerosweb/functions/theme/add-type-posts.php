@@ -25,7 +25,7 @@ function create_post_type(){
 		'hierachical' => true,
 		'supports'    => array('title','editor','excerpt','custom-fields','thumbnail','page-attributes'),
 		'taxonomies'  => array('post-tag','banner_category'),
-		'menu_icon'   => 'dashicons-visibility',
+		'menu_icon'   => 'dashicons-laptop',
 	);
 
 	/*|>>>>>>>>>>>>>>>>>>>> SERVICIOS  <<<<<<<<<<<<<<<<<<<<|*/
@@ -51,11 +51,35 @@ function create_post_type(){
 		'taxonomies'  => array('post-tag','category','servicio_category'),
 		'menu_icon'   => 'dashicons-exerpt-view',
 	);
+	/*|>>>>>>>>>>>>>>>>>>>> VIDEOS  <<<<<<<<<<<<<<<<<<<<|*/
+	
+	$labels4 = array(
+		'name'               => __('Videos'),
+		'singular_name'      => __('Video'),
+		'add_new'            => __('Nuevo Video'),
+		'add_new_item'       => __('Agregar nuevo Video'),
+		'edit_item'          => __('Editar Video'),
+		'view_item'          => __('Ver Video'),
+		'search_items'       => __('Buscar Videos'),
+		'not_found'          => __('Video no encontrado'),
+		'not_found_in_trash' => __('Video no encontrado en la papelera'),
+	);
+
+	$args4 = array(
+		'labels'      => $labels4,
+		'has_archive' => true,
+		'public'      => true,
+		'hierachical' => false,
+		'supports'    => array('title','editor','excerpt','custom-fields','thumbnail','page-attributes'),
+		'taxonomies'  => array('post-tag','category','servicio_category'),
+		'menu_icon'   => 'dashicons-video-alt2',
+	);
 
 
 	/*|>>>>>>>>>>>>>>>>>>>> REGISTRAR  <<<<<<<<<<<<<<<<<<<<|*/
 	register_post_type( 'banner'   , $args  );
 	register_post_type( 'servicio' , $args2 );
+	register_post_type( 'gallery-video' , $args4 );
 	
 	flush_rewrite_rules();
 }
